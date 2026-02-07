@@ -12,23 +12,26 @@ body{
     overflow:hidden;
 }
 
-/* 9 rows × 6 columns collage */
+/* 9 rows × 6 columns fixed collage */
 #collage{
     position:fixed;
     top:0;
     left:0;
-    width:100%;
-    height:100%;
+    width:100vw;
+    height:100vh;
+
     display:grid;
-    grid-template-columns:repeat(6, 1fr);
-    grid-template-rows:repeat(9, 1fr);
+    grid-template-columns:repeat(6, calc(100vw / 6));
+    grid-template-rows:repeat(9, calc(100vh / 9));
+
     z-index:-1;
 }
 
 #collage img{
     width:100%;
     height:100%;
-    object-fit:cover;
+    object-fit:cover;     /* crops images to same size */
+    display:block;
     filter:brightness(0.55);
 }
 
@@ -112,3 +115,4 @@ function moveNo(){
 
 </body>
 </html>
+
